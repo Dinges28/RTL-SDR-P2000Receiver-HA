@@ -143,11 +143,44 @@ cd RTL-SDR-P2000Receiver-HA
 See the Configuration section for more information
 
 
-After successful configuraton and testing by running it manually you may add it to the startup script
+After successful configuraton and testing by running it manually you may add it to the startup script or as a service
+
+#### On startup
+
 ```
 sudo nano /etc/rc.local
 python3 /home/<YOUR USER>/RTL-SDR-P2000Receiver-HA/p2000.py &
 ```
+
+#### As a service
+
+```
+sudo tee -a /lib/systemd/system/p2000SDR.service <<EOF
+
+[Unit]
+Description = P2000 SDR
+After = network-online.target
+Wants = network-online.target
+
+[Service]
+User = root
+Group = root
+Type = simple
+ExecStart = /usr/bin/python3 /home/<YOUR USER>/RTL-SDR-P2000Receiver-HA/p2000.py
+Restart = on-failure
+RestartSec = 30
+
+[Install]
+WantedBy = multi-user.target
+EOF
+```
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start p2000SDR.service
+sudo systemctl enable p2000SDR.service
+```
+
 
 Python packages, the needed packages are installed by default on Debian 10.
 If you get errors about missing packages when starting the software, you may need to install them for your distro.
