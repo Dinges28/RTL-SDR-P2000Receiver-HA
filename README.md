@@ -180,6 +180,7 @@ Install these packages to support MQTT and opencage:
 sudo pip3 install paho.mqtt
 sudo pip3 install opencage
 sudo pip3 install geopy
+sudo pip3 install requests
 ```
 
 ### 4) Install RTL-SDR-P2000Receiver-HA software
