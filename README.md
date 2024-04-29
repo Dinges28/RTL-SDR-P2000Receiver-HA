@@ -72,14 +72,14 @@ libpulse-dev libx11-dev python3-pip
 
 Download and build the software:
 ```
-cd
-sudo git clone https://gitea.osmocom.org/sdr/gr-osmosdr.git 
+cd ~
+sudo git clone https://gitea.osmocom.org/sdr/rtl-sdr.git
 cd rtl-sdr
 
-mkdir build;cd build
+sudo mkdir build;cd build
 
-cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
-make
+sudo cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
+sudo make
 sudo make install
 sudo ldconfig
 ```
@@ -115,14 +115,14 @@ Reading samples in async mode...
 
 Download and build the software:
 ```
-cd
-git clone https://github.com/Zanoroy/multimon-ng.git
+cd ~
+sudo git clone https://github.com/Zanoroy/multimon-ng.git
 cd multimon-ng
 
-mkdir build;cd build
+sudo mkdir build;cd build
 
-qmake -qt=qt5 ../multimon-ng.pro
-make
+sudo qmake -qt=qt5 ../multimon-ng.pro
+sudo make
 sudo make install
 ```
 The multimon-ng command should work after this install.
