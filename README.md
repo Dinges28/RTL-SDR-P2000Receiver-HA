@@ -73,7 +73,7 @@ libpulse-dev libx11-dev python3-pip
 Download and build the software:
 ```
 cd
-git clone git://git.osmocom.org/rtl-sdr.git
+sudo git clone https://gitea.osmocom.org/sdr/gr-osmosdr.git 
 cd rtl-sdr
 
 mkdir build;cd build
