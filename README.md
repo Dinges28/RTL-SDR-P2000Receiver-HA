@@ -177,7 +177,7 @@ Most of the needed packages are installed by default on Debian 11. If you get er
 missing packages when starting the software, you may need to install them for your distro.
 Install these packages to support MQTT and opencage:
 ```
-sudo pip3 install paho.mqtt
+sudo pip3 install paho-mqtt==1.5.1
 sudo pip3 install opencage
 sudo pip3 install geopy
 sudo pip3 install requests
